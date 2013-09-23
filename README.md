@@ -20,6 +20,14 @@ Exemplum gratis:
     cruft.foo 37
     cruft.foo 23
     cruft.foo "monkey"
+    
+Will give:
+
+    37
+    23
+    monkey
+    (eval):8:in `foo': foo returned String instead of Fixnum (RuntimeError)
+    	from test.rb:15:in `<main>'
 
 Adding more "types" (bahahahhahahaha):
 
