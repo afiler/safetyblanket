@@ -14,11 +14,16 @@ Exemplum gratis:
         puts arg
         arg
       end
+      
+      char def first_letter(arg)
+        puts arg[0]
+        arg[0]
+      end
     end
 
     cruft = Cruft.new
     cruft.foo 37
-    cruft.foo 23
+    cruft.first_letter "pie"
     cruft.foo "monkey"
     
 Will give:
@@ -37,7 +42,10 @@ Adding more "types" (bahahahhahahaha):
       def set(symbol)
         safetyblanketize symbol, Set
       end
+      
+      def Palindrome(symbol)
+        safetyblanketize symbol, String do |str|
+          str == str.reverse
+        end
+      end
     end
-
-Todo:
-* Add support for blocks for further "type safety" (bahahahhahahaha)

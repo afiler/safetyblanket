@@ -15,7 +15,7 @@ module SafetyBlanket
   
   def Palindrome(symbol)
     safetyblanketize symbol, String do |str|
-      true
+      str == str.reverse
     end
   end
 end
@@ -37,11 +37,17 @@ class Cruft
     puts arg
     arg
   end
+  
+  Palindrome def bands(index)
+    band = ['ABBA', 'Ziggy Pop'][index]
+    puts band
+    band
+  end
 end
 
 cruft = Cruft.new
 cruft.foo 37
-cruft.foo 23
+cruft.bands 0
 cruft.first_letter "pie"
-cruft.bar -20
+cruft.bar 20
 cruft.foo "monkey"
