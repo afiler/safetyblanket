@@ -19,20 +19,29 @@ Exemplum gratis:
         puts arg[0]
         arg[0]
       end
+      
+      void def null_factory(arg)
+        puts arg
+        nil
+      end
     end
 
     cruft = Cruft.new
     cruft.foo 37
+    cruft.null_factory "🏭"
     cruft.first_letter "pie"
     cruft.foo "monkey"
     
 Will give:
 
     37
-    23
+    ABBA
+    🏭
+    p
+    20
     monkey
-    (eval):8:in `foo': foo returned String instead of Fixnum (RuntimeError)
-    	from test.rb:15:in `<main>'
+    (eval):10:in `foo': foo returned String instead of Fixnum (RuntimeError)
+            from example.rb:59:in `<main>'
 
 Adding more "types" (bahahahhahahaha):
 

@@ -6,7 +6,7 @@ module SafetyBlanket
       if not retval.is_a? #{type.name}
         raise RuntimeError, "#{symbol} returned #{'#{retval.class}'} instead of #{type}"
       end
-    }
+      } if type
     
     block_check = if block_given?
       class_variable_set '@@_safety_checks', {} if not class_variable_defined? '@@_safety_checks' 
@@ -49,6 +49,12 @@ module SafetyBlanket
   def char(symbol)
     safetyblanketize symbol, String do |str|
       str.length == 1
+    end
+  end
+  
+  def void(symbol)
+    safetyblanketize symbol do |retval|
+      not retval
     end
   end
 end

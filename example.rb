@@ -33,6 +33,11 @@ class Cruft
     arg[0]
   end
   
+  void def null_factory(arg)
+    puts arg
+    nil
+  end
+  
   PosInt def bar(arg)
     puts arg
     arg
@@ -48,6 +53,7 @@ end
 cruft = Cruft.new
 cruft.foo 37
 cruft.bands 0
+cruft.null_factory "🏭"
 cruft.first_letter "pie"
 cruft.bar 20
 cruft.foo "monkey"
